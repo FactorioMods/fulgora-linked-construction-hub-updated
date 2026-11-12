@@ -8,10 +8,10 @@ local market = data.raw['market']['market']
 entity.selection_box = market.selection_box
 entity.collision_box = market.collision_box
 
-entity.icon = '__fulgora-linked-construction-hub__/graphics/icons/fulgoran-construction-hub.png'
+entity.icon = '__fulgora-linked-construction-hub-updated__/graphics/icons/fulgoran-construction-hub.png'
 entity.icons = nil -- aai containers
-entity.animation = table.deepcopy(market.picture)
-entity.animation.filename = '__fulgora-linked-construction-hub__/graphics/entity/fulgoran-construction-hub.png'
+entity.robot_door.animation = table.deepcopy(market.picture)
+entity.robot_door.animation.filename = '__fulgora-linked-construction-hub-updated__/graphics/entity/fulgoran-construction-hub.png'
 
 entity.inventory_type = "normal"
 
@@ -47,7 +47,7 @@ data:extend{item}
 local recipe = {
   type = "recipe",
   name = "fulgoran-construction-hub",
-  category = "electromagnetics",
+  categories = {"electromagnetics"},
   surface_conditions =
   {
     {
@@ -69,7 +69,7 @@ local recipe = {
 
 local ingredients = {}
 for _, result in ipairs(data.raw["recipe"]["scrap-recycling"].results) do
-  table.insert(recipe.ingredients, {type = "item", name = result.name, amount = result.probability * 100})
+  table.insert(recipe.ingredients, {type = "item", name = result.name, amount = (result.probability or 1) * 100})
 end
 
 data:extend{recipe}
@@ -81,3 +81,6 @@ for i, effect in ipairs(effects) do
     break
   end
 end
+
+
+

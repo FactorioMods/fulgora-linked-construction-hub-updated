@@ -1,8 +1,10 @@
+local legacy_import = require("legacy_import")
 local Update = require("scripts.update")
 
 local Handler = {}
 
 function Handler.on_init()
+  if legacy_import.adopt("fulgora-linked-construction-hub") then Handler.on_configuration_changed(); return end
   storage.surfacedata = {}
   storage.surfaces_to_update = {}
 
@@ -18,6 +20,7 @@ function Handler.on_init()
 end
 
 function Handler.on_configuration_changed()
+  legacy_import.adopt("fulgora-linked-construction-hub")
   for _, surface in pairs(game.surfaces) do
     if storage.surfacedata[surface.index] == nil then
       ---@diagnostic disable-next-line: param-type-mismatch, missing-fields

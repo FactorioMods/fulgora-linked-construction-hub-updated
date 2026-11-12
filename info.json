@@ -1,26 +1,25 @@
 {
-    "name": "fulgora-linked-construction-hub",
-    "title": "Fulgora - linked construction hub",
-    "description": "Construction materials can be shared with disconnected islands.",
-
-    "version": "1.0.6",
-    "author": "Quezler",
-    "factorio_version": "2.0",
-
-    "quality_required": false,
-    "rail_bridges_required": false,
-    "space_travel_required": true,
-    "spoiling_required": false,
-    "freezing_required": false,
-    "segmented_units_required": false,
-    "expansion_shaders_required": false,
-
-    "dependencies": [
-        "? newsletter-for-mods-made-by-quezler",
-
-        "base",
-        "space-age",
-
-        "(?) aai-containers"
-    ]
+  "name": "fulgora-linked-construction-hub-updated",
+  "title": "Fulgora - linked construction hub: Updated",
+  "description": "Factorio 2.1 compatibility fork of fulgora-linked-construction-hub. Construction materials can be shared with disconnected islands.",
+  "version": "1.0.0",
+  "author": "Quezler; FactorioMods (Factorio 2.1 port)",
+  "factorio_version": "2.1",
+  "quality_required": false,
+  "rail_bridges_required": false,
+  "space_travel_required": true,
+  "spoiling_required": false,
+  "freezing_required": false,
+  "segmented_units_required": false,
+  "expansion_shaders_required": false,
+  "dependencies": [
+    "? newsletter-for-mods-made-by-quezler",
+    "base >= 2.1.24",
+    "space-age",
+    "(?) aai-containers",
+    "! fulgora-linked-construction-hub"
+  ],
+  "migrates_from": [
+    "fulgora-linked-construction-hub"
+  ]
 }
